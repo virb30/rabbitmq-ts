@@ -1,0 +1,25 @@
+POST http://localhost:3001/messages/direct?name=fila1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "content": "Mensagem para consumidor 1 na fila1",
+    "date": "2023-01-01T10:00:00"
+}
+
+###
+POST http://localhost:3001/messages/topic?name=fila.logs HTTP/1.1
+Content-Type: application/json
+
+{
+    "content": "Mensagem para consumidor 2 na fila de logs",
+    "date": "2023-01-02T10:00:00"
+}
+
+###
+POST http://localhost:3001/messages/fanout HTTP/1.1
+Content-Type: application/json
+
+{
+    "content": "Mensagem para todos os consumidores",
+    "date": "2023-01-03T10:00:00"
+}
